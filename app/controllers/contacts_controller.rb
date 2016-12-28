@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
   # POST request to /contacts
   def create
     # mass assignment of form fields into contact object
+    # note that "@contact = Contact.new" + "@contact.save" is equivalent to "Contact.create"
     @contact = Contact.new(contact_params)
     # save the contact object to the db
     if @contact.save
